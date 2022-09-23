@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "PhigrosSauceFinder": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false,
+      "nativeDebugging": false
+    }
+  }
+}
