@@ -4,6 +4,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Authors>QRoo</Authors>
+    <RepositoryUrl>https://github.com/Q-roo/Phigros-Sauce-Finder</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
