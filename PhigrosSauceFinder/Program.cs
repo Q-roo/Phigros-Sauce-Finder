@@ -1,6 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 
 namespace PhigrosSauceFinder
 {
@@ -11,11 +12,23 @@ namespace PhigrosSauceFinder
 
         static void Main(string[] args)
         {
+            string wikiJson = ChartCollection.GetWikiJson();
+
             //get the target score
             Console.Write("score: ");
             int targetScore = int.Parse(Console.ReadLine());
 
             //loading the json and getting working with it
+            //this makes everything null, a problem for the future me
+            var settings = new JsonSerializerSettings
+            {
+                Error = (obj, args) =>
+                {
+                    var contextErrors = args.ErrorContext;
+                    contextErrors.Handled = true;
+                }
+            };
+
             var json = JsonConvert.DeserializeObject<Dictionary<string, object>>(ChartCollection.allCharts);
 
             //straight from https://stackoverflow.com/questions/47045964/c-sharp-json-to-dictionary-of-objects

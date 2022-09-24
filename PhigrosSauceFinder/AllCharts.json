@@ -2393,5 +2393,33 @@
       "level": 14.6,
       "notes": 613
     }
+  },
+  "C.s.q.n": {
+    "ez": {
+      "level": 5.1,
+      "notes": 330
+    },
+    "hd": {
+      "level": 12.6,
+      "notes": 755
+    },
+    "in": {
+      "level": 15.7,
+      "notes": 1066
+    }
+  },
+  "Brave Notes": {
+    "ez": {
+      "level": 5.6,
+      "notes": 299
+    },
+    "hd": {
+      "level": 11.4,
+      "notes": 442
+    },
+    "in": {
+      "level": 14.6,
+      "notes": 768
+    }
   }
 }
