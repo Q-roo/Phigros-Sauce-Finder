@@ -1,36 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Threading;
 
 namespace PhigrosSauceFinder
 {
     class MainMenu
     {
-        void WriteOption(string optionID, string optionName)
+        static void WriteOption(string optionID, string optionName)
         {
             Console.WriteLine($"[{optionID}] {optionName}");
         }
 
-        void Menu()
+        public static void Menu()
         {
-            WriteOption("1", "Calculate sauce score");
-            WriteOption("2", "Calculate minimum requirement");
-
-            string input = Console.ReadLine();
-
-            if (input == "1")
+            for (; ; )
             {
+                Console.Clear();
 
-            }
+                WriteOption("1", "Calculate sauce score");
+                WriteOption("2", "Calculate minimum requirement");
+                WriteOption("3", "Exit");
 
-            else if (input == "2")
-            {
+                string input = Console.ReadLine();
 
-            }
+                if (input == "1")
+                {
+                    Console.Clear();
+                    SauceCalculator.SauceCalculation();
+                }
 
-            else
-            {
-                Console.WriteLine("Choose a valid option!");
+                else if (input == "2")
+                {
+                    Console.Clear();
+                    MinimumRequirementCalculator.RequirementCalculation();
+                }
+
+                else if (input == "3")
+                {
+                    Environment.Exit(0);
+                }
+
+                else
+                {
+                    Console.WriteLine("Choose a valid option!");
+                    Thread.Sleep(1000);
+                }
             }
         }
     }
