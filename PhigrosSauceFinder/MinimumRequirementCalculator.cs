@@ -11,19 +11,8 @@ namespace PhigrosSauceFinder
         //list of all the charts that can result in the given score
         static List<ScoreOption> scoreOptions = new List<ScoreOption>();
 
-        static JsonSerializerSettings settings = new JsonSerializerSettings // a solution to parse wiki json. it turns everything to null though
-        {
-            Error = (obj, args) =>
-            {
-                var contextErrors = args.ErrorContext;
-                contextErrors.Handled = true;
-            }
-        };
-
         public static void RequirementCalculation()
         {
-            string wikiJson = ChartCollection.FixWikiJson();
-            Console.WriteLine(wikiJson);
 
             Console.WriteLine("it is strongly recommended to use this feature with locale emulator or in a chinese system language");
 
@@ -115,9 +104,12 @@ namespace PhigrosSauceFinder
                 }
 
                 return (_result);
-            }
+            };
 
-            var json = JsonConvert.DeserializeObject<Dictionary<string, object>>(ChartCollection.allCharts);
+            //Console.WriteLine(ChartCollection.FixedWikiJson());
+            Console.WriteLine(ChartCollection.GetWikiJson());
+
+            var json = JsonConvert.DeserializeObject<Dictionary<string, object>>(ChartCollection.FixedWikiJson());
 
             //straight from https://stackoverflow.com/questions/47045964/c-sharp-json-to-dictionary-of-objects
             ImOutOfNameIdeas.RecurseDeserialize(json);
