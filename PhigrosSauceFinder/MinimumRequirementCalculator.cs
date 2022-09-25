@@ -11,8 +11,6 @@ namespace PhigrosSauceFinder
         //list of all the charts that can result in the given score
         static List<ScoreOption> scoreOptions = new List<ScoreOption>();
 
-        static string wikiJson = ChartCollection.FixWikiJson();
-
         static JsonSerializerSettings settings = new JsonSerializerSettings // a solution to parse wiki json. it turns everything to null though
         {
             Error = (obj, args) =>
@@ -24,7 +22,9 @@ namespace PhigrosSauceFinder
 
         public static void RequirementCalculation()
         {
+            string wikiJson = ChartCollection.FixWikiJson();
             Console.WriteLine(wikiJson);
+
             Console.WriteLine("it is strongly recommended to use this feature with locale emulator or in a chinese system language");
 
             bool isEasy(string difficulty)
