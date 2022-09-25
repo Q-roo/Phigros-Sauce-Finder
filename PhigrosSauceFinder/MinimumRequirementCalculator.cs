@@ -106,10 +106,7 @@ namespace PhigrosSauceFinder
                 return (_result);
             };
 
-            //Console.WriteLine(ChartCollection.FixedWikiJson());
-            Console.WriteLine(ChartCollection.GetWikiJson());
-
-            var json = JsonConvert.DeserializeObject<Dictionary<string, object>>(ChartCollection.FixedWikiJson());
+            var json = JsonConvert.DeserializeObject<Dictionary<string, object>>(ChartCollection.allCharts);
 
             //straight from https://stackoverflow.com/questions/47045964/c-sharp-json-to-dictionary-of-objects
             ImOutOfNameIdeas.RecurseDeserialize(json);

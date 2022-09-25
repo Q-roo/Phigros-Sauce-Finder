@@ -9,17 +9,6 @@ namespace PhigrosSauceFinder
         //list of all the charts that can result in the given score
         static List<ScoreOption> scoreOptions = new List<ScoreOption>();
 
-        static string wikiJson = ChartCollection.GetWikiJson(); // cant parse the json yet
-
-        static JsonSerializerSettings settings = new JsonSerializerSettings // a solution to parse wiki json. it turns everything to null though
-        {
-            Error = (obj, args) =>
-            {
-                var contextErrors = args.ErrorContext;
-                contextErrors.Handled = true;
-            }
-        };
-
         public static void SauceCalculation()
         {
 
