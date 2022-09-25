@@ -24,7 +24,7 @@ namespace PhigrosSauceFinder
 
         public static void RequirementCalculation()
         {
-            Console.WriteLine(ChartCollection.FixWikiJson());
+            Console.WriteLine(wikiJson);
             Console.WriteLine("it is strongly recommended to use this feature with locale emulator or in a chinese system language");
 
             bool isEasy(string difficulty)

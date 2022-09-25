@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Net;
 
 namespace PhigrosSauceFinder
 {
@@ -21,9 +20,9 @@ namespace PhigrosSauceFinder
 
             for (int i = 1; i < 10; i++)//janky but it will do just fine
             {
-                string doubleQuotedTxt = string.Format(@"""{0}""", i.ToString());
-                jsonToFix.Replace($"{i.ToString()}: ", $"\"{i.ToString()}\": ");
-                Console.WriteLine($"replacing {i} : \n{i.ToString()}:\n", doubleQuotedTxt + ":");
+                string doubleQuotedTxt = String.Format(@"""{0}""", i.ToString());
+                jsonToFix.Replace($"{i}", doubleQuotedTxt);
+                //Console.WriteLine($"replacing {i} to: {doubleQuotedTxt}");
             }
 
             return (jsonToFix);
